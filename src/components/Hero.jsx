@@ -11,7 +11,7 @@ const Hero = () => {
     <section id="hero" className="hero">
       <img src={Profile} alt="Nesto Odtojan" className="hero-profile" />
       <h1>Hello, I'm Ernesto Odtojan</h1>
-      <p>Frontend Developer | React JS | HTML CSS |</p>
+      <p>Frontend Developer</p>
       <a href="#projects" className="btn">See My Work</a>
 
       {snowflakes.map((_, index) => {
