@@ -1,0 +1,30 @@
+#contact {
+  padding: 4rem 2rem;
+  background: #1e1e1e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontal center */
+  justify-content: center; /* vertical center if needed */
+  text-align: center;
+  gap: 1rem;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#contact p {
+  font-size: 1rem;
+}
+
+#contact a {
+  color: #ff4c60;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#contact a:hover {
+  color: white;
+}
