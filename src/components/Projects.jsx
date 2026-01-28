@@ -1,22 +1,32 @@
 import React from "react";
-import './projects.css'; // Add CSS for styling
+import "./Projects.css"; // Matches the file name exactly
 
 const Projects = () => {
   const projects = [
-    { name: "Portfolio Website", description: "My personal playlist interactive buttons inspired by spotify", link: "https://musicninesto.netlify.app" },
-    // Add more projects here
+    {
+      name: "Portfolio Website",
+      description:
+        "A personal portfolio website built with React.js, showcasing projects and skills.",
+      link: "https://nestoportfolio.netlify.app",
+    },
+    {
+      name: "Music Player",
+      description:
+        "A fully functional React music player with interactive controls and lyrics display.",
+      link: "https://musicninesto.netlify.app",
+    },
   ];
 
   return (
-    <section id="projects">
-      <h2>Projects</h2>
+    <section id="projects" className="projects-section">
+      <h2>My Projects</h2>
       <div className="projects-container">
-        {projects.map((project, idx) => (
-          <div key={idx} className="project-card">
+        {projects.map((project, index) => (
+          <div key={index} className="project-card">
             <h3>{project.name}</h3>
             <p>{project.description}</p>
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              {project.link}
+              View Project
             </a>
           </div>
         ))}

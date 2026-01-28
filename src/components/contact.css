@@ -1,30 +1,156 @@
-#contact {
-  padding: 4rem 2rem;
-  background: #1e1e1e;
-  color: white;
+.contact-page {
   display: flex;
   flex-direction: column;
-  align-items: center; /* horizontal center */
-  justify-content: center; /* vertical center if needed */
-  text-align: center;
-  gap: 1rem;
-}
-
-#contact h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#contact p {
-  font-size: 1rem;
-}
-
-#contact a {
-  color: #ff4c60;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-#contact a:hover {
+  justify-content: center; /* vertical center content */
+  align-items: center;     /* horizontal center content */
+  min-height: 100vh;
+  background-color: #1e1e1e;
   color: white;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* ensures Kirby and snow don’t overflow */
+}
+
+/* ================= SNOWFLAKES ================= */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: white;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  animation: fall 10s linear infinite;
+  font-size: 1.2rem;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ================= KIRBY WALKING ================= */
+.kirby-walk {
+  position: absolute;
+  bottom: 10px; /* fixed distance from bottom */
+  left: -100px; /* start off-screen */
+  height: 80px;
+  z-index: 1;
+  animation: walkBottom 6s linear infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes walkBottom {
+  0% {
+    left: -100px;
+    transform: scaleX(1); /* face right */
+  }
+  50% {
+    left: 90%;
+    transform: scaleX(1);
+  }
+  51% {
+    transform: scaleX(-1); /* flip to face left */
+  }
+  100% {
+    left: -100px;
+    transform: scaleX(-1);
+  }
+}
+
+/* ================= TEXT & LINKS ================= */
+.contact-page h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+.contact-page p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Contact links */
+.contact-links h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #00bfff;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-links p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-item img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 3px white);
+}
+
+.contact-item img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px white);
+}
+
+.contact-links a {
+  color: #00bfff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.contact-links a:hover {
+  color: #1ecbe1;
+  text-shadow: 0 0 8px #00bfff;
+}
+
+/* Gmail copy button */
+.email-copy span {
+  font-weight: bold;
+  color: #00bfff;
+}
+
+.email-copy button {
+  padding: 0.4rem 0.8rem;
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.email-copy button:hover {
+  background-color: #1ecbe1;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .kirby-walk { height: 60px; }
+  .contact-item img { height: 25px; width: 25px; }
+}
+
+@media (max-width: 480px) {
+  .kirby-walk { height: 50px; }
+  .contact-item img { height: 20px; width: 20px; }
 }

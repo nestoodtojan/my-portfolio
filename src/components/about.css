@@ -1,65 +1,81 @@
+/* ================= ABOUT SECTION ================= */
 .about {
-  padding: 4rem 2rem;
+  display: flex;                
+  flex-direction: column;       
+  justify-content: center;      
+  align-items: center;          
+  min-height: 80vh;             
+  padding: 6rem 2rem 4rem;
   background: #1e1e1e;
   color: white;
   text-align: center;
+  box-sizing: border-box;
 }
 
+/* Headings and text */
 .about h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .about p {
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
-/* Slider container */
+/* Tech icons container */
 .tech-slider {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-/* Track that scrolls infinitely */
-.tech-track {
   display: flex;
-  gap: 2rem;
-  min-width: max-content; /* ensures track is wide enough */
-  animation: scroll 20s linear infinite;
-}
-
-/* Icon wrapper for tooltip */
-.icon-wrapper {
-  display: inline-flex;
-  flex-direction: column; /* stack image and label vertically */
+  justify-content: center;
   align-items: center;
-  position: relative;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Icons styling */
+/* Icon wrapper */
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Icon images with glow and float */
 .icon-wrapper img {
-  height: 80px;
+  height: 100px;
   width: auto;
   object-fit: contain;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  filter: drop-shadow(0 0 3px white);
+  animation: floatGlow 6s ease-in-out infinite alternate;
 }
 
+/* Hover effect with strong glow */
 .icon-wrapper img:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);
+  box-shadow: 0 0 20px #ffffff55, 0 0 40px #ffffff33;
 }
 
-/* Tooltip below icon */
+/* Floating animation */
+@keyframes floatGlow {
+  0%   { transform: translateX(0); filter: drop-shadow(0 0 3px white); }
+  25%  { transform: translateX(-4px); filter: drop-shadow(0 0 4px white); }
+  50%  { transform: translateX(4px); filter: drop-shadow(0 0 5px white); }
+  75%  { transform: translateX(-4px); filter: drop-shadow(0 0 4px white); }
+  100% { transform: translateX(0); filter: drop-shadow(0 0 3px white); }
+}
+
+/* Tooltip */
 .tooltip {
   margin-top: 6px;
   background-color: #333;
   color: #fff;
   padding: 2px 6px;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
@@ -70,12 +86,29 @@
   opacity: 1;
 }
 
-/* Infinite scroll animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .about h2 { font-size: 1.8rem; }
+  .about p { font-size: 0.95rem; max-width: 600px; }
+  .icon-wrapper img { height: 80px; }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 5rem 1.5rem 3rem;
+    min-height: 70vh; 
   }
-  100% {
-    transform: translateX(-50%); /* scroll exactly one set */
+  .about h2 { font-size: 1.6rem; }
+  .about p { font-size: 0.9rem; max-width: 500px; }
+  .icon-wrapper img { height: 70px; }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 4.5rem 1rem 3rem;
+    min-height: 65vh;
   }
+  .about h2 { font-size: 1.4rem; }
+  .about p { font-size: 0.85rem; }
+  .icon-wrapper img { height: 60px; }
 }

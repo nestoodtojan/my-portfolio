@@ -20,7 +20,7 @@ const icons = [
   { src: VSCodeLogo, name: "VS Code" },
   { src: GitHubLogo, name: "GitHub" },
   { src: GitLogo, name: "Git" },
-  { src: figmaLogo, name: "Figma" }
+  { src: figmaLogo, name: "Figma" },
 ];
 
 const About = () => {
@@ -28,29 +28,22 @@ const About = () => {
     <section id="about" className="about">
       <h2>About Me</h2>
       <p>
-        I am a passionate Front developer with a strong commitment to creating engaging and efficient web experiences. 
-        I enjoy transforming ideas into responsive, user-friendly applications that not only look great but also provide seamless functionality. 
-        My focus is on designing and building interfaces that enhance user interaction while maintaining performance and accessibility. 
-        I am constantly exploring new techniques and best practices to improve my craft and deliver high-quality, innovative web solutions.
+        I am a passionate Frontend developer committed to creating engaging and
+        efficient web experiences. I enjoy transforming ideas into responsive,
+        user-friendly applications that look great and provide seamless
+        functionality. I focus on building interfaces that enhance user
+        interaction while maintaining performance and accessibility. I
+        constantly explore new techniques and best practices to deliver
+        high-quality, innovative web solutions.
       </p>
 
       <div className="tech-slider">
-        <div className="tech-track">
-          {/* Original set */}
-          {icons.map((icon, idx) => (
-            <div key={idx} className="icon-wrapper">
-              <img src={icon.src} alt={icon.name} />
-              <span className="tooltip">{icon.name}</span>
-            </div>
-          ))}
-          {/* Clone set for seamless infinite scroll */}
-          {icons.map((icon, idx) => (
-            <div key={"clone-" + idx} className="icon-wrapper">
-              <img src={icon.src} alt={icon.name} />
-              <span className="tooltip">{icon.name}</span>
-            </div>
-          ))}
-        </div>
+        {icons.map((icon, idx) => (
+          <div key={idx} className="icon-wrapper">
+            <img src={icon.src} alt={icon.name} />
+            <span className="tooltip">{icon.name}</span>
+          </div>
+        ))}
       </div>
     </section>
   );

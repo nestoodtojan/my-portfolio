@@ -1,3 +1,4 @@
+/* ================= HERO ================= */
 .hero {
   position: relative;
   display: flex;
@@ -5,12 +6,11 @@
   align-items: center;
   justify-content: center;
   height: 90vh;
-  text-align: center;
-  gap: 1rem;
   background: #1e1e1e;
-  overflow: hidden;
   color: white;
-  z-index: 1;
+  text-align: center;
+  overflow: hidden;
+  gap: 1rem;
 }
 
 /* Profile image */
@@ -19,42 +19,30 @@
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
-  border: 3px solid rgb(194, 169, 169); /* Changed to white */
+  border: 3px solid white;
   z-index: 2;
 }
 
-/* Button */
-.btn {
+/* Text */
+.hero h1 {
+  font-size: 3rem;
   z-index: 2;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  background: white; /* Changed to white */
-  color: #1e1e1e;    /* Dark text to contrast */
-  font-weight: bold;
-  margin-top: 1rem;
-  transition: transform 0.2s ease;
 }
 
-/* Optional hover effect for button */
-.btn:hover {
-  transform: scale(1.05);
+.hero p {
+  font-size: 1.5rem;
+  z-index: 2;
 }
 
-/* Falling snowflakes */
+/* ================= SNOW ================= */
 .snowflake {
   position: absolute;
   top: -10px;
   color: white;
-  font-size: 10px;
   user-select: none;
-  z-index: 1;
   pointer-events: none;
-  animation-name: fall;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  z-index: 1;
+  animation: fall 10s linear infinite;
 }
 
 @keyframes fall {
@@ -65,5 +53,36 @@
   100% {
     transform: translateY(100vh) rotate(360deg);
     opacity: 0;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-profile {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-profile {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 }
