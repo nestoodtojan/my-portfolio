@@ -1,4 +1,3 @@
-/* About Section */
 .about {
   padding: 4rem 2rem;
   background: #1e1e1e;
@@ -19,37 +18,56 @@
 
 /* Slider container */
 .tech-slider {
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   overflow: hidden;
 }
 
-/* Sliding row */
+/* Track that scrolls infinitely */
 .tech-track {
   display: flex;
-  gap: 1.5rem;
-  width: calc(100px * 5 * 2 + 1.5rem * 9); /* two sets of icons */
+  gap: 2rem;
+  min-width: max-content; /* ensures track is wide enough */
   animation: scroll 20s linear infinite;
-  /* Smooth speed change on hover */
-  transition: all 0.5s ease;
 }
 
-/* Speed up slightly on hover of the whole slider */
-.tech-slider:hover .tech-track {
-  animation: scroll 10s linear infinite; /* faster scroll when hovered */
+/* Icon wrapper for tooltip */
+.icon-wrapper {
+  display: inline-flex;
+  flex-direction: column; /* stack image and label vertically */
+  align-items: center;
+  position: relative;
 }
 
 /* Icons styling */
-.tech-track img {
-  height: 100px;       
-  width: auto;        
+.icon-wrapper img {
+  height: 80px;
+  width: auto;
   object-fit: contain;
-  transition: transform 0.5s ease; /* slow zoom */
+  transition: transform 0.5s ease;
 }
 
-/* Optional: hover zoom on icons */
-.tech-track img:hover {
-  transform: scale(0.4);
+.icon-wrapper img:hover {
+  transform: scale(1.1);
+}
+
+/* Tooltip below icon */
+.tooltip {
+  margin-top: 6px;
+  background-color: #333;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.icon-wrapper:hover .tooltip {
+  opacity: 1;
 }
 
 /* Infinite scroll animation */
@@ -58,6 +76,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-1 * (100px * 5 + 1.5rem * 4))); /* scroll one set */
+    transform: translateX(-50%); /* scroll exactly one set */
   }
 }
