@@ -1,5 +1,5 @@
 import React from "react";
-import "./Projects.css"; // Matches the file name exactly
+import "./projects.css"; // Matches the file name exactly
 
 const Projects = () => {
   const projects = [

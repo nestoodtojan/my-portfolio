@@ -6,7 +6,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Contact from "./components/contact";
 import Footer from "./components/Footer";
-import Projects from "./components/projects";
+import Projects from "./components/project";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
 
         {/* Projects page */}
         <Route
-          path="/projects"
+          path="/project"
           element={
             <>
               <Projects />
