@@ -42,7 +42,7 @@ const Navbar = () => {
           </button>
         </li>
         <li>
-          <Link to="/projects" onClick={() => setIsOpen(false)}>
+          <Link to="/project" onClick={() => setIsOpen(false)}>
             Projects
           </Link>
         </li>
