@@ -1,3 +1,4 @@
+/* About Section */
 .about {
   padding: 4rem 2rem;
   background: #1e1e1e;
@@ -16,21 +17,47 @@
   line-height: 1.5;
 }
 
-.tech-icons {
+/* Slider container */
+.tech-slider {
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Sliding row */
+.tech-track {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: calc(100px * 5 * 2 + 1.5rem * 9); /* two sets of icons */
+  animation: scroll 20s linear infinite;
+  /* Smooth speed change on hover */
+  transition: all 0.5s ease;
 }
 
-.tech-icons img {
-  width: 100px;
-  height: 50px;
+/* Speed up slightly on hover of the whole slider */
+.tech-slider:hover .tech-track {
+  animation: scroll 10s linear infinite; /* faster scroll when hovered */
+}
+
+/* Icons styling */
+.tech-track img {
+  height: 100px;       
+  width: auto;        
   object-fit: contain;
-  transition: transform 0.2s ease;
+  transition: transform 0.5s ease; /* slow zoom */
 }
 
-.tech-icons img:hover {
-  transform: scale(1.2);
+/* Optional: hover zoom on icons */
+.tech-track img:hover {
+  transform: scale(0.4);
+}
+
+/* Infinite scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (100px * 5 + 1.5rem * 4))); /* scroll one set */
+  }
 }

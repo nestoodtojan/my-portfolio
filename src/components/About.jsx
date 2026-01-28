@@ -1,12 +1,15 @@
 import React from "react";
-import './about.css';
+import "./about.css";
 
-// Import your language/tech images
 import htmlLogo from "../assets/html.png";
 import cssLogo from "../assets/css.png";
 import jsLogo from "../assets/javascript.png";
 import reactLogo from "../assets/react.png";
 import figmaLogo from "../assets/figma.png";
+import nodejsLogo from"../assets/nodejs.png";
+import GitHubLogo from"../assets/GitHub.png";
+import GitLogo from"../assets/Git.png";
+import VSCodeLogo from"../assets/VSCode.png";
 
 const About = () => {
   return (
@@ -15,15 +18,38 @@ const About = () => {
       <p>
         I am a passionate web developer with experience in React.js, HTML, CSS, and JavaScript.
         I enjoy building responsive and user-friendly web applications.
-        I also know UI and UX design tools like Figma and Adobe XD.
       </p>
 
-      <div className="tech-icons">
-        <img src={htmlLogo} alt="HTML" title="HTML" />
-        <img src={cssLogo} alt="CSS" title="CSS" />
-        <img src={jsLogo} alt="JavaScript" title="JavaScript" />
-        <img src={reactLogo} alt="React" title="React" />
-        <img src={figmaLogo} alt="Figma" title="Figma" />
+      <div className="tech-slider">
+        <div className="tech-track">
+          {/* First set */}
+          <img src={htmlLogo} alt="HTML" />
+          <img src={cssLogo} alt="CSS" />
+          <img src={jsLogo} alt="JavaScript" />
+          <img src={reactLogo} alt="React" />
+          <img src={nodejsLogo} alt="Nodejs" />
+          <img src={VSCodeLogo} alt="VSCode"/>
+          <img src={GitHubLogo} alt="Github" />
+          <img src={GitLogo} alt="Git" />
+          <img src={figmaLogo} alt="Figma" />
+
+          <img src={htmlLogo} alt="HTML" />
+          <img src={cssLogo} alt="CSS" />
+          <img src={jsLogo} alt="JavaScript" />
+          <img src={reactLogo} alt="React" />
+          <img src={nodejsLogo} alt="Nodejs" />
+          <img src={VSCodeLogo} alt="VSCode"/>
+          <img src={GitHubLogo} alt="Github" />
+          <img src={GitLogo} alt="Git" />
+          <img src={figmaLogo} alt="Figma" />
+
+          
+
+
+
+          
+
+        </div>
       </div>
     </section>
   );
