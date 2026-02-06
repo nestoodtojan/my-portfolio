@@ -36,34 +36,45 @@
   }
 }
 
-/* ================= KIRBY WALKING ================= */
+/* ================= KIRBY JUMPING AROUND ================= */
 .kirby-walk {
   position: absolute;
-  bottom: 10px; /* fixed distance from bottom */
-  left: -100px; /* start off-screen */
   height: 80px;
   z-index: 1;
-  animation: walkBottom 6s linear infinite alternate;
-  transform-origin: center;
+  animation: moveAround 10s ease-in-out infinite;
 }
 
-@keyframes walkBottom {
+/* Keyframes for random movement around the page */
+@keyframes moveAround {
   0% {
-    left: -100px;
-    transform: scaleX(1); /* face right */
+    top: 20%;
+    left: 10%;
+    transform: translateY(0);
+  }
+  25% {
+    top: 40%;
+    left: 80%;
+    transform: translateY(-20px);
   }
   50% {
-    left: 90%;
-    transform: scaleX(1);
+    top: 70%;
+    left: 50%;
+    transform: translateY(0);
   }
-  51% {
-    transform: scaleX(-1); /* flip to face left */
+  75% {
+    top: 30%;
+    left: 30%;
+    transform: translateY(-25px);
   }
   100% {
-    left: -100px;
-    transform: scaleX(-1);
+    top: 20%;
+    left: 10%;
+    transform: translateY(0);
   }
 }
+
+
+
 
 /* ================= TEXT & LINKS ================= */
 .contact-page h1 {

@@ -12,7 +12,7 @@ const Projects = () => {
     {
       name: "Music Player",
       description:
-        "A fully functional React music player with interactive controls and lyrics display.",
+        "A fully functional music player with interactive controls.",
       link: "https://musicninesto.netlify.app",
     },
   ];

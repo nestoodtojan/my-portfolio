@@ -10,6 +10,8 @@ import nodejsLogo from "../assets/nodejs.png";
 import GitHubLogo from "../assets/GitHub.png";
 import GitLogo from "../assets/Git.png";
 import VSCodeLogo from "../assets/VSCode.png";
+import pythonLogo from "../assets/python.png";
+import flaskLogo from "../assets/flask.png";
 
 const icons = [
   { src: htmlLogo, name: "HTML" },
@@ -17,10 +19,13 @@ const icons = [
   { src: jsLogo, name: "JavaScript" },
   { src: reactLogo, name: "React" },
   { src: nodejsLogo, name: "Node.js" },
+  { src: pythonLogo, name: "Python"},
+  { src: flaskLogo, name: "Flask" },
   { src: VSCodeLogo, name: "VS Code" },
   { src: GitHubLogo, name: "GitHub" },
   { src: GitLogo, name: "Git" },
   { src: figmaLogo, name: "Figma" },
+  
 ];
 
 const About = () => {
@@ -28,13 +33,9 @@ const About = () => {
     <section id="about" className="about">
       <h2>About Me</h2>
       <p>
-        I am a passionate Frontend developer committed to creating engaging and
-        efficient web experiences. I enjoy transforming ideas into responsive,
-        user-friendly applications that look great and provide seamless
-        functionality. I focus on building interfaces that enhance user
-        interaction while maintaining performance and accessibility. I
-        constantly explore new techniques and best practices to deliver
-        high-quality, innovative web solutions.
+       I am a passionate and motivated software engineer driven by curiosity and a love for creating solutions that make an impact. 
+       I enjoy tackling challenges, continuously learning, and collaborating with others to bring ideas to life. 
+       I am committed to growth, innovation, and delivering high-quality work in any environment.
       </p>
 
       <div className="tech-slider">
